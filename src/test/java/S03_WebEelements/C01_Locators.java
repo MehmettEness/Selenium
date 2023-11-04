@@ -21,13 +21,25 @@ public class C01_Locators {
         driver.get("https://www.amazon.com");
 
         //Arama kutusunu locate ediniz ve iphone yazdırıp aratınız
+        //1.yol
       //  WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
        // aramaKutusu.sendKeys("iphone");
        // aramaKutusu.submit();
 
-        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone", Keys.ENTER);
+        //2.yol
+        //driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone", Keys.ENTER);
+
+        //3.yol
+        driver.findElement(By.name("field-keywords")).sendKeys("iphone" , Keys.ENTER);
 
         //sayfayı kapatınız.
         driver.close();
+
+         /*
+        Locate ettigimiz webelement <input> tagina sahip ise o webelemente sendKeys methodu ile istedigimiz texti gonderebiliriz
+        Eger bir arama kutusunu locate edip text gönderirsek iki sekilde enter tusuna bastirabilirliz
+        1) submit() methodu
+        2) Keys.ENTER
+         */
     }
 }
